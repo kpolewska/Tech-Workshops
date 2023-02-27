@@ -224,7 +224,7 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
-    - _Snow_Emission_Strength: 1
+    - _Snow_Emission_Strength: 500
     - _Snow_Metallic_Strength: 0.5
     - _Snow_Normal_Strength: 0
     - _Snow_Opacity: 1

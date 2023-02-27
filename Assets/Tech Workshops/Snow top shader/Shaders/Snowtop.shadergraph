@@ -155,7 +155,14 @@
         }
     ],
     "m_GroupDatas": [],
-    "m_StickyNoteDatas": [],
+    "m_StickyNoteDatas": [
+        {
+            "m_Id": "dc389fb34dad46dfa999a49d00b157b9"
+        },
+        {
+            "m_Id": "29e9d5c1c24d46708534beea086361bf"
+        }
+    ],
     "m_Edges": [
         {
             "m_OutputSlot": {
@@ -538,8 +545,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 0.0
+            "x": -0.00003266334533691406,
+            "y": -127.00005340576172
         },
         "m_Blocks": [
             {
@@ -1151,6 +1158,26 @@
     },
     "m_Labels": [],
     "m_Space": 3
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "29e9d5c1c24d46708534beea086361bf",
+    "m_Title": "Base color construction",
+    "m_Content": "Sample the base color texture\nInvert the snow mask\nMultiply color by the snow mask\nAdd the snow base color with the masked base color\nApply to Base color",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -1348.0,
+        "y": -570.0,
+        "width": 1071.0,
+        "height": 127.0
+    },
+    "m_Group": {
+        "m_Id": ""
+    }
 }
 
 {
@@ -2756,10 +2783,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -391.0000305175781,
-            "y": -247.99998474121095,
-            "width": 130.0,
-            "height": 118.0
+            "x": -424.9999084472656,
+            "y": -248.00001525878907,
+            "width": 130.00003051757813,
+            "height": 117.99995422363281
         }
     },
     "m_Slots": [
@@ -3646,6 +3673,26 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "dc389fb34dad46dfa999a49d00b157b9",
+    "m_Title": "Double-Click this subgraph to see the snow shader!",
+    "m_Content": "",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -1806.0,
+        "y": 171.0,
+        "width": 333.0,
+        "height": 100.0
+    },
+    "m_Group": {
+        "m_Id": ""
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "dc4a5bcb36814e49b826bcb67466d117",
     "m_Id": 117630364,
@@ -4015,10 +4062,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1095.0,
-            "y": -238.0,
+            "x": -1061.9998779296875,
+            "y": -320.0,
             "width": 208.0,
-            "height": 277.9999694824219
+            "height": 278.0
         }
     },
     "m_Slots": [
