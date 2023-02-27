@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3338147788787603336
+--- !u!114 &-480862793725048777
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23,7 +23,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SnowMonument
+  m_Name: SnowBuilding
   m_Shader: {fileID: -6465566751694194690, guid: ce6a7e0df8543b847b1f7e2e3fa42622,
     type: 3}
   m_ValidKeywords:
@@ -86,7 +86,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 008a6b98c52009a49999ea04da7a0291, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0bb174f69c9851a48b09bf7d8180c39e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
@@ -102,14 +102,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal_Map:
-        m_Texture: {fileID: 2800000, guid: 92517a76bb442374d8246e5d4fc70a85, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Occlusion_Map:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_3a867bb3c2c74f6782547562a113f0de_Texture_1:
+    - _Occlusion_Map:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -230,9 +226,9 @@ Material:
     - _SmoothnessRemapMin: 0
     - _Snow_Emission_Strength: 1
     - _Snow_Metallic_Strength: 0.5
-    - _Snow_Normal_Strength: 0.001
+    - _Snow_Normal_Strength: 0
     - _Snow_Opacity: 1
-    - _Snow_Scale: 300
+    - _Snow_Scale: 500
     - _Snow_Smoothness_Strength: 1
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2

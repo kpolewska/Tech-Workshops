@@ -85,7 +85,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: da127946480dcc645b278cb2f2e43c5f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
@@ -101,6 +101,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal_Map:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Occlusion_Map:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -229,7 +233,7 @@ Material:
     - _Snow_Emission_Strength: 5000
     - _Snow_Intensity: 0
     - _Snow_Metallic_Strength: 0.25
-    - _Snow_Normal_Strength: 0
+    - _Snow_Normal_Strength: 0.001
     - _Snow_Opacity: 1
     - _Snow_Scale: 500
     - _Snow_Smoothness_Strength: 1
