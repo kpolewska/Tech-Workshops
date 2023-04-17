@@ -1,0 +1,31 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel SnowTrailDeformation
+
+Texture2D<float1> CurrentFrameSnowTrailMap;
+SamplerState samplerCurrentFrameSnowTrailMap;
+
+RWTexture2D<float1> FinalSnowTrailMap;
+
+[numthreads(8,8,1)]
+void SnowTrailDeformation(uint3 id : SV_DispatchThreadID)
+{
+    float resolutionWidth;
+    float resolutionHeight;
+    FinalSnowTrailMap.GetDimensions(resolutionWidth, resolutionHeight);
+    
+    float2 currentUVLocation = (id.xy + 0.5) / resolutionWidth;
+    
+    //Sample the trail deformation of this current frame
+    float color = CurrentFrameSnowTrailMap.SampleLevel(samplerCurrentFrameSnowTrailMap, currentUVLocation, 0);
+    
+    //Blend the current frame trail info with the final snow deformation map and take the highest value
+    //FinalSnowDeformationMap is reused between frames, so that it's result is kept.
+    FinalSnowTrailMap[id.xy] = max(FinalSnowTrailMap[id.xy], color);
+    
+    //Makes the trail slowly fade away by reducing the final value slowly.
+    FinalSnowTrailMap[id.xy] *= 0.999;
+    
+    //This essentially fades the borders of the trail map, avoiding issues with texture clamping
+    float2 borderMask = smoothstep(0.5, 0.48, abs(currentUVLocation.xy - 0.5));
+    FinalSnowTrailMap[id.xy] *= borderMask.x * borderMask.y;
+}
