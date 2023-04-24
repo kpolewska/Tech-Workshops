@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b36c73269c1668c4bbfb76bf41a74b15
+guid: 5ab7dc462162fbc4b913d63309f90099
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
@@ -17,7 +17,7 @@ ModelImporter:
     second: //RootNode
   - first:
       43: 4300000
-    second: rpgpp_lt_cloud_01
+    second: rpgpp_lt_barrel_01
   externalObjects: {}
   materials:
     materialImportMode: 0
@@ -83,13 +83,13 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 90
     normalImportMode: 1
     tangentImportMode: 1
     normalCalculationMode: 0
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
-    normalSmoothingSource: 0
+    normalSmoothingSource: 2
   referencedClips: []
   importAnimation: 1
   humanDescription:

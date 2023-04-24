@@ -1,0 +1,47 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel SnowTrailDeformation
+
+Texture2D<float1> CurrentFrameSnowTrailMap;
+Texture2D<float1> CompositeFrameSnowTrailMap;
+SamplerState sampler_linear_clamp;
+
+RWTexture2D<float1> FinalSnowTrailMap;
+
+float SnowTrailWorldspaceScale;
+
+float4 RelativePositionDifference;
+
+[numthreads(8,8,1)]
+void SnowTrailDeformation(uint3 id : SV_DispatchThreadID)
+{
+    float resolutionWidth;
+    float resolutionHeight;
+    FinalSnowTrailMap.GetDimensions(resolutionWidth, resolutionHeight);
+    
+    float2 currentUVLocation = (id.xy + 0.5) / resolutionWidth;
+    
+    //This is where the magic happens!
+    //Since the snowtrail render moves with the main character, we actually need to offset where we read the pixels
+    //Otherwise, immobile objects will draw to the map, while the main character won't. We want the opposite!
+    //For instance, if the character moves by (10, 0), the texture will also move by 10.
+    //So instead of reading where we are, we need to read where we were! That means reading the 10th pixel in the opposite direction!
+    //The location is also scaled with the worldspace scale to get the proper position
+    float2 offsetUVLocation = currentUVLocation + RelativePositionDifference.xz / SnowTrailWorldspaceScale;
+    //If you want to see it in action, uncomment this next line. This will cause the issue.
+    //offsetUVLocation = currentUVLocation;
+    
+    //Sample the trail deformation of this current frame
+    float currentFrameSnowTrail = CurrentFrameSnowTrailMap.SampleLevel(sampler_linear_clamp, offsetUVLocation, 0);
+    float compositeFrameSnowTrail = CompositeFrameSnowTrailMap.SampleLevel(sampler_linear_clamp, offsetUVLocation, 0);
+    
+    //Blend between the current frame trail and the previous frame final map into the new final snow deformation map 
+    //and take the highest value. FinalSnowTrailMap is reused between frames, allowing the add the frames together
+    FinalSnowTrailMap[id.xy] = max(currentFrameSnowTrail, compositeFrameSnowTrail);
+    
+    //Makes the trail slowly fade away by reducing the final value slowly.
+    FinalSnowTrailMap[id.xy] *= 0.9999;
+    
+    //This essentially fades the borders of the trail map, avoiding issues with texture clamping
+    float2 borderMask = smoothstep(0.5, 0.48, abs(currentUVLocation.xy - 0.5));
+    FinalSnowTrailMap[id.xy] *= borderMask.x * borderMask.y;
+}
