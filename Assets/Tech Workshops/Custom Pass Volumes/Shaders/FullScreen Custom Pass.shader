@@ -55,11 +55,11 @@ Shader "FullScreen/FullScreenCustomPass"
         float grayscalePixelValue = length(color.rgb) / 3;
 
         //Depth Feth
-        float depthMask = posInput.deviceDepth * 100;
+        float depthMask = depth * 10;
         depthMask = saturate(depthMask);
 
         //Grayscale effect based on depth!
-        //color.rgb = lerp(grayscalePixelValue, color, depthMask);
+        color.rgb = lerp(grayscalePixelValue, color, depthMask);
 
         //UV 0-1 based color fetch
         //float3 currentPosition = SampleCameraColor(posInput.positionNDC);

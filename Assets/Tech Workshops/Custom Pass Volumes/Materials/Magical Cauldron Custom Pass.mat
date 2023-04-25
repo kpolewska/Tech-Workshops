@@ -228,10 +228,10 @@ Material:
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 1
     - _DstBlend: 10
-    - _Effect_Blob_Size: 0.25
+    - _Effect_Blob_Size: 0.07
     - _Effect_Speed: 5
     - _Effect_Strength: 1
-    - _Emission_Strength: 500
+    - _Emission_Strength: 1000
     - _EmissiveColorMode: 1
     - _EmissiveExposureWeight: 1
     - _EmissiveIntensity: 1
@@ -276,7 +276,7 @@ Material:
     - _RefractionModel: 0
     - _RenderQueueType: 4
     - _RequireSplitLighting: 0
-    - _Scale: 1.05
+    - _Scale: 1.19
     - _Smoothness: 0.5
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
@@ -333,7 +333,7 @@ Material:
     - ObjectColor: {r: 0, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 0.76273143, b: 0, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 1, g: 0.13112374, b: 0, a: 1}
+    - _Color: {r: 1, g: 0.6032201, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
@@ -342,7 +342,7 @@ Material:
     - _HueVariationColor: {r: 1, g: 0.5, b: 0, a: 0.2}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
-    - _Offset: {r: 0, g: -0.02, b: 0, a: 0}
+    - _Offset: {r: 0, g: -0.08, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
