@@ -10,7 +10,7 @@ public class SnowTrailManager : MonoBehaviour
         {
             if(_instance == null)
             {
-                _instance = FindObjectOfType<SnowTrailManager>();
+                _instance = FindFirstObjectByType<SnowTrailManager>();
             }
 
             return _instance;
