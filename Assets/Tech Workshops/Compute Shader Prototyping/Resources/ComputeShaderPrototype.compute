@@ -1,9 +1,9 @@
 // Each kernel tells which function to compile; you can have many kernels
 #pragma kernel CSMain
 
-Texture2D<float4> DataTex_in;
+Texture3D<float4> DataTex_in;
 SamplerState samplerDataTex_in;
-RWTexture2D<float4> DataTex_out;
+RWTexture3D<float4> DataTex_out;
 
 [numthreads(8,8,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
@@ -12,5 +12,5 @@ void CSMain (uint3 id : SV_DispatchThreadID)
 
     float4 result = float4(id.x & id.y, (id.x & 15)/15.0, (id.y & 15)/15.0, 1);
 
-    DataTex_out[id.xy] = result;
+    DataTex_out[id.xyz] = result;
 }

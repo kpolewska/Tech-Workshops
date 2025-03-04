@@ -103,6 +103,9 @@ public abstract class ComputeShaderBlackboardBase : MonoBehaviour
 
     protected virtual void InitDebug()
     {
+        //Doesn't work for 3D textures
+        if (Resolution.z > 1) return;
+
         if (DebugDrawToSelf)
         {
             try
@@ -148,8 +151,8 @@ public abstract class ComputeShaderBlackboardBase : MonoBehaviour
 
     protected virtual void DebugView()
     {
-        //Temp change to support 3D tex
-        if(_renderTarget.dimension != UnityEngine.Rendering.TextureDimension.Tex3D)
+        //Debug does not support 3D textures at the moment.
+        if(Resolution.z > 1)
         {
             if (debugTexture.activeSelf != DebugViewData)
                 debugTexture.SetActive(DebugViewData);
